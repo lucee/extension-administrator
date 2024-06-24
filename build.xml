@@ -17,7 +17,9 @@
   <property name="javaVersionAgent" value="11"/>
   <property name="javaVersionLoader" value="11"/>
     <property name="runtime_classpath" value="${java.class.path}"/>
-
+  <tstamp>
+      <format property="NOW" pattern="yyyy/MM/dd HH:mm:ss z" locale="en,GB"/>
+  </tstamp>
   <target name="init">
     <!-- Create the time stamp -->
     <tstamp/>
@@ -53,11 +55,14 @@ version: "${bundleversion}"
 id: "${id}"
 name: "${label}"
 description: "${description}"
+start-bundles: false
+trial: false
 lucee-core-version: "${luceeCoreVersion}"
 release-type: ${releaseType}
-start-bundles: false
 mapping: "[{'virtual':'/lucee/admin','physical':'{lucee-config}/context/admin','archive':'{lucee-config}/context/lucee-admin.lar','primary':'physical ','inspect':'once ','toplevel':'true','readonly':'true','listener-mode':'curr2root','listener-type':'modern'}]"
 </echo>
+
+
 
     <!-- Zip everything  -->
      <zip destfile="${dist}/${filename}-${bundleversion}.lex">
