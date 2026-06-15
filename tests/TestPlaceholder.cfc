@@ -1,4 +1,4 @@
-component extends="org.lucee.cfml.test.LuceeTestCase" labels="admin" {
+component extends="org.lucee.cfml.test.LuceeTestCase" labels="administrator" {
     /*
 
     the lucee test suite runs without a http server, so the admin stuff can't be unit tested
